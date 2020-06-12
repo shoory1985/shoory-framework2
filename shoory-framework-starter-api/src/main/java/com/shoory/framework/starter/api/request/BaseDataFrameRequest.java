@@ -1,36 +1,21 @@
 package com.shoory.framework.starter.api.request;
 
 import java.io.ByteArrayInputStream;
-import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.io.Serializable;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-
-import org.hibernate.validator.constraints.NotBlank;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.shoory.framework.starter.api.DataFrameReader;
-import com.shoory.framework.starter.api.annotation.ApiHidden;
-import com.shoory.framework.starter.api.annotation.ApiName;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
+@ApiModel
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public abstract class DataFrameBaseRequest extends UserBaseRequest {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public abstract class BaseDataFrameRequest extends BaseRequest {
 
 	public abstract void fromDataFrame(byte[] dataFrame);
 	

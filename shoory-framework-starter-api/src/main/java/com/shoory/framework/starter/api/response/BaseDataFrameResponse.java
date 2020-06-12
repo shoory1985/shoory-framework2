@@ -7,13 +7,16 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.shoory.framework.starter.api.DataFrameWriter;
+
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
+@ApiModel
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public abstract class DataFrameBaseResponse extends BaseResponse implements Serializable {
+public abstract class BaseDataFrameResponse extends BaseResponse implements Serializable {
 
 	/**
 	 * 

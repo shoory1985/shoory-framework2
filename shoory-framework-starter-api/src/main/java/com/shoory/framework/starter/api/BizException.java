@@ -1,4 +1,4 @@
-package com.shoory.framework.starter.api.constants;
+package com.shoory.framework.starter.api;
 
 public class BizException extends RuntimeException {
 	/**

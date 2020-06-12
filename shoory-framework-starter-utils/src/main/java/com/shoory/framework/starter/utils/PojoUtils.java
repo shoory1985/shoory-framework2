@@ -19,8 +19,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shoory.framework.starter.api.constants.BizException;
-import com.shoory.framework.starter.api.constants.SysException;
+import com.shoory.framework.starter.api.BizException;
 
 @Component
 public class PojoUtils {

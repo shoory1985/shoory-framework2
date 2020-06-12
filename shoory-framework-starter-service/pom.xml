@@ -36,6 +36,5 @@
 			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
 
-
 	</dependencies>
 </project>
