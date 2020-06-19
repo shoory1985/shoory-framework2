@@ -13,13 +13,6 @@ import springfox.documentation.annotations.ApiIgnore;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BaseRequest {
-
-	public static final String SUCCESS = "SUCCESS";
-	public static final String ERROR_UNKNOWN = "ERROR_UNKNOWN";
-	public static final String ERROR_METHOD_NOT_FOUND = "ERROR_METHOD_NOT_FOUND";
-	public static final String ERROR_INTERNAL = "ERROR_INTERNAL";
-	public static final String ERROR_INVALID_PARAMETERS = "ERROR_INVALID_PARAMETERS";
-
 	@ApiModelProperty(value = "语言", notes = "默认zh_CN", example = "zh_CN")
 	private String lang = "zh_CN";
 	

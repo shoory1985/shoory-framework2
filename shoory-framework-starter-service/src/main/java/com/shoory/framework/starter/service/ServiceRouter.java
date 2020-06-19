@@ -49,7 +49,7 @@ public class ServiceRouter {
 				response.setCode(be.getMessage());
 			} catch (Throwable e) {
 				response = new BaseResponse();
-				response.setCode(BaseRequest.ERROR_INTERNAL);
+				response.setCode(BaseResponse.ERROR_INTERNAL);
 				response.setMessage(e.getMessage());
 				e.printStackTrace();
 			}
@@ -67,7 +67,7 @@ public class ServiceRouter {
 			logger.info(e.getMessage());
 			BaseResponse response = new BaseResponse();
 			e.printStackTrace();
-			response.setCode(BaseRequest.ERROR_INTERNAL);
+			response.setCode(BaseResponse.ERROR_INTERNAL);
 			response.setMessage(e.getMessage());
 			return response;
 		}
