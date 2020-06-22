@@ -1,5 +1,6 @@
 package com.shoory.framework.starter.api.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
@@ -22,4 +23,9 @@ public class BaseResponse {
 
 	@ApiModelProperty(value = "响应消息", example = "")
 	private String message;
+	
+	@JsonIgnore
+	public boolean isSuccess() {
+		return SUCCESS.equals(this.code);
+	}
 }
