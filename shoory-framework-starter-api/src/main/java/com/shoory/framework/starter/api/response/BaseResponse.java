@@ -28,4 +28,7 @@ public class BaseResponse {
 	public boolean isSuccess() {
 		return SUCCESS.equals(this.code);
 	}
+	public void succeed() {
+		this.code = SUCCESS;
+	}
 }
