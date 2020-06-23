@@ -1,6 +1,7 @@
 package com.shoory.framework.starter.sms.lingkai;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,20 +24,19 @@ public class LingKaiSmsSender implements SmsSender {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	private final String URL = "https://mb345.com/wsn/BatchSend2.aspx?CorpID={1}&Pwd={2}&Mobile={3}&Content={4}&SendTime=&cell=";
+	private final String URL = "https://mb345.com/wsn/BatchSend2.aspx?CorpID=%s&Pwd=%s&Mobile=%s&Content=%s";
 	private Logger logger = LoggerFactory.getLogger(LingKaiSmsSender.class);
 	
 	@Override
 	public boolean sendSms(String nationCode, String phoneNumber, String templateId, String[] params, String smsSign) {
-		ResponseEntity<String> result;
 		try {
-			result = restTemplate.getForEntity(URL, 
-					String.class, 
-					this.corpID, 
-					this.pwd, 
-					phoneNumber, 
-					new String(templateId.getBytes("utf-8"), "gb2312"));
+			String url = String.format(URL, this.corpID, this.pwd, phoneNumber, 
+					URLEncoder.encode(templateId, "UTF-8"));
+			ResponseEntity<String> result = restTemplate.getForEntity(
+					url,
+					String.class);
 
+			logger.info(url);
 			logger.info(result.getBody());
 			//
 
