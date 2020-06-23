@@ -1,6 +1,7 @@
 package com.shoory.framework.starter.service;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.naming.spi.DirStateFactory.Result;
@@ -30,7 +31,7 @@ public class BizExceptionHandler {
 	public ResponseEntity<BaseResponse> handleServiceException(BizException exception) {
 		BaseResponse response = new BaseResponse();
 		response.setCode(exception.getMessage());
-		i18nComponent.getMessage(response.getCode(), "zh_CN");
+		response.setMessage(Optional.ofNullable(i18nComponent.getMessage(response.getCode(), "zh_CN")).orElse(response.getCode()));
 
 		return new ResponseEntity<BaseResponse>(response, HttpStatus.OK);
 	}
@@ -40,7 +41,7 @@ public class BizExceptionHandler {
 	public ResponseEntity<BaseResponse> handleServiceException(MethodArgumentNotValidException exception) {
 		BaseResponse response = new BaseResponse();
 		response.setCode(exception.getBindingResult().getAllErrors().get(0).getDefaultMessage());
-		i18nComponent.getMessage(response.getCode(), "zh_CN");
+		response.setMessage(Optional.ofNullable(i18nComponent.getMessage(response.getCode(), "zh_CN")).orElse(response.getCode()));
 //		response.setMessage(exception.getBindingResult().getAllErrors().stream()
 //				.map(ObjectError::getDefaultMessage)
 //				.collect(Collectors.joining()));
