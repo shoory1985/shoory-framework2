@@ -4,6 +4,7 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.shoory.framework.starter.api.response.BaseResponse;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
@@ -14,6 +15,6 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BaseSessionRequest extends BaseRequest {
 
-	@NotBlank(message = "无授权")
+	@NotBlank(message = BaseResponse.ERROR_NO_AUTHORZIATION)
 	private String _credential;
 }

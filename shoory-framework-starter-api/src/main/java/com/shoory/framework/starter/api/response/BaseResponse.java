@@ -14,9 +14,10 @@ import lombok.Data;
 public class BaseResponse {
 	public static final String SUCCESS = "SUCCESS";
 	public static final String ERROR_UNKNOWN = "ERROR_UNKNOWN";
-	public static final String ERROR_METHOD_NOT_FOUND = "ERROR_METHOD_NOT_FOUND";
 	public static final String ERROR_INTERNAL = "ERROR_INTERNAL";
 	public static final String ERROR_INVALID_PARAMETERS = "ERROR_INVALID_PARAMETERS";
+	public static final String ERROR_OPERATION_FORBIDDEN = "ERROR_OPERATION_FORBIDDEN";
+	public static final String ERROR_NO_AUTHORZIATION = "ERROR_NO_AUTHORZIATION";
 
 	@ApiModelProperty(value = "响应代码", example = "SUCCESS")
 	private String code = "ERROR_UNKNOWN";
