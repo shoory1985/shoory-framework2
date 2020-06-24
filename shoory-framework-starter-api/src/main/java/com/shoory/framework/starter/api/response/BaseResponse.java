@@ -17,8 +17,11 @@ public class BaseResponse {
 	public static final String ERROR_INTERNAL = "ERROR_INTERNAL";
 	public static final String ERROR_INVALID_PARAMETERS = "ERROR_INVALID_PARAMETERS";
 	public static final String ERROR_OPERATION_FORBIDDEN = "ERROR_OPERATION_FORBIDDEN";
-	public static final String ERROR_NO_AUTHORZIATION = "ERROR_NO_AUTHORZIATION";
-
+	public static final String ERROR_ACCESS_TOKEN_MISSED = "ERROR_ACCESS_TOKEN_MISSED";
+	public static final String ERROR_ACCESS_TOKEN_EXPIRED = "ERROR_ACCESS_TOKEN_EXPIRED";
+	public static final String ERROR_INVALID_ACCESS_TOKEN = "ERROR_INVALID_ACCESS_TOKEN";
+	public static final String ERROR_INVALID_CREDENTIAL = "ERROR_INVALID_CREDENTIAL";
+	
 	@ApiModelProperty(value = "响应代码", example = "SUCCESS")
 	private String code = "ERROR_UNKNOWN";
 
