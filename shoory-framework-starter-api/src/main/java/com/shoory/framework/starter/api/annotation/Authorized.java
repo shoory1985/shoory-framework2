@@ -13,6 +13,7 @@ import com.shoory.framework.starter.api.validator.NullableRangeValidator;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface JwtAuthorization {
+public @interface Authorized {
 	String[] permissions() default {};
+	String[] roles() default {};
 }

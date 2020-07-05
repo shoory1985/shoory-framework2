@@ -16,7 +16,6 @@ public class BaseRequest {
 	@ApiModelProperty(value = "语言", notes = "默认zh_CN", example = "zh_CN")
 	private String lang = "zh_CN";
 	
-
 	@ApiModelProperty(value = "地址", hidden = true)
 	private String _clientAddress;	
 }
