@@ -43,8 +43,8 @@ public class JwtAspect {
 	 * @return 返回被切入的方法的返回值
 	 * @throws Throwable
 	 */
-	@Around("@annotation(com.shoory.framework.starter.api.annotation.Authorized)")
-	public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
+	@Around("@annotation(authorized)")
+	public Object doAround(ProceedingJoinPoint joinPoint, Authorized authorized) throws Throwable {
 		// 校验JWT
 		ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 		String token = attributes.getRequest().getHeader("Authorization");
